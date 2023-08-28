@@ -16,17 +16,17 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
-import { getTest } from "@/services/ml-services"
+// import { getTest } from "@/services/ml-services"
 
 export default async function IndexPage() {
 
   //console.log(getTest())
 
   // Initiate both requests in parallel
-  const test = getTest()
+  // const test = getTest()
 
   // Wait for the promises to resolve
-  const [testResponse] = await Promise.all([test])
+  // const [testResponse] = await Promise.all([test])
 
   return (
     <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
@@ -37,7 +37,7 @@ export default async function IndexPage() {
           <CardHeader>
             <CardTitle className="text-center">Tell us about your dream home</CardTitle>
             <CardDescription className="text-center">
-              {testResponse ? testResponse : "Loading..."}
+              {/* {testResponse ? testResponse : "Loading..."} */}
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -64,9 +64,6 @@ export default async function IndexPage() {
             </Button>
           </CardFooter>
         </Card>
-
-
-
 
       </div>
     </section>
