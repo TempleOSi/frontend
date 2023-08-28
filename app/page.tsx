@@ -16,8 +16,18 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
+import { getTest } from "@/services/ml-services"
 
-export default function IndexPage() {
+export default async function IndexPage() {
+
+  //console.log(getTest())
+
+  // Initiate both requests in parallel
+  const test = getTest()
+
+  // Wait for the promises to resolve
+  const [testResponse] = await Promise.all([test])
+
   return (
     <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
       <div className="flex flex-col items-center gap-2">
@@ -26,6 +36,9 @@ export default function IndexPage() {
         <Card className="w-[500px]">
           <CardHeader>
             <CardTitle className="text-center">Tell us about your dream home</CardTitle>
+            <CardDescription className="text-center">
+              {testResponse ? testResponse : "Loading..."}
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <Input />
