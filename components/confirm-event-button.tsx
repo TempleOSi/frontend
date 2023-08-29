@@ -9,11 +9,12 @@ export function ConfirmEventButton() {
 
     return (
         <Button
+            className="w-full"
             onClick={() => {
                 console.log("CLICKED");
             }}
         >
-            ¡Comprar casa!
+            Submit
         </Button>
     )
 }

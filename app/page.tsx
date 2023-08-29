@@ -59,9 +59,10 @@ export default async function IndexPage() {
             <Input />
           </CardContent>
           <CardFooter>
-            <Button className="w-full">
+          <ConfirmEventButton/>
+            {/* <Button className="w-full">
                Submit
-            </Button>
+            </Button> */}
           </CardFooter>
         </Card>
 
