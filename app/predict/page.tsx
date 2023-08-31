@@ -31,12 +31,13 @@ export default async function IndexPage() {
   return (
     <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
       <div className="flex flex-col items-center gap-2">
-        <p className="text-2xl font-bold"> Housing Prices </p>
-        <Imagen1 />
-        {/* <Card className="w-[500px]">
+        <p className="text-2xl font-bold"> Predict </p>
+        <HouseForm />
+        <Card className="w-[500px]">
           <CardHeader>
             <CardTitle className="text-center">Tell us about your dream home</CardTitle>
             <CardDescription className="text-center">
+              {/* {testResponse ? testResponse : "Loading..."} */}
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -59,8 +60,11 @@ export default async function IndexPage() {
           </CardContent>
           <CardFooter>
           <ConfirmEventButton/>
+            {/* <Button className="w-full">
+               Submit
+            </Button> */}
           </CardFooter>
-        </Card> */}
+        </Card>
 
       </div>
     </section>
