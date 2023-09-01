@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const ML_SERVICES_URL = process.env.ML_SERVICES_URL;
+const ML_SERVICES_URL = "http://127.0.0.1:5000";
 
 export const getTest = async () => {
     try {

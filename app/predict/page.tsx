@@ -33,39 +33,6 @@ export default async function IndexPage() {
       <div className="flex flex-col items-center gap-2">
         <p className="text-2xl font-bold"> Predict </p>
         <HouseForm />
-        <Card className="w-[500px]">
-          <CardHeader>
-            <CardTitle className="text-center">Tell us about your dream home</CardTitle>
-            <CardDescription className="text-center">
-              {/* {testResponse ? testResponse : "Loading..."} */}
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Input />
-          </CardContent>
-          <CardContent>
-            <Input />
-          </CardContent>
-          <CardContent>
-            <Input />
-          </CardContent>
-          <CardContent>
-            <Input />
-          </CardContent>
-          <CardContent>
-            <Input />
-          </CardContent>
-          <CardContent>
-            <Input />
-          </CardContent>
-          <CardFooter>
-          <ConfirmEventButton/>
-            {/* <Button className="w-full">
-               Submit
-            </Button> */}
-          </CardFooter>
-        </Card>
-
       </div>
     </section>
   )
