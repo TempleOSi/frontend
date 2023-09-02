@@ -16,6 +16,12 @@ export const siteConfig = {
     {
       title: "About Us",
       href: "/about-us",
+      
+    },
+    {
+      title: "Sign-In",
+      href: "/sign-in",
+      
     },
   ],
   links: {
