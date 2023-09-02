@@ -5,6 +5,7 @@ import HeadInfo from '@/components/elements/head-info'
 import SmtextTitleText from '@/components/elements/smtext-title-text';
 import ImgThreetext from '@/components/elements/img-threetext';
 import ImgSection from '@/components/elements/img-section';
+import Footer from '@/components/elements/footer';
 
 // Imagenes
 import family from "../../assets/family.png";
@@ -33,6 +34,7 @@ const page = () => {
         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula, purus ut"
         image={neighborhood}
       />
+      <Footer />
     </section>
   )
 }

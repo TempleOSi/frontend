@@ -13,17 +13,16 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import HouseForm from "@/components/form/HouseForm"
 
 // Imagenes
 import house from "../assets/house-example.png";
 import stats from "../assets/stats.avif";
-import ames from "../assets/ames.png";
 
 // Componentes
 import HeadInfo from "@/components/elements/head-info"
 import FourBoxes from "./four-boxes"
 import ImgBox from "@/components/elements/img-box"
+import Footer from "@/components/elements/footer"
 
 export default async function IndexPage() {
 
@@ -41,7 +40,7 @@ export default async function IndexPage() {
         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula, purus ut"
         buttonText="¡Prueba una demo!"
       />
-      <FourBoxes />
+      <Footer />
     </section>
   )
 }
