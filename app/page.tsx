@@ -4,7 +4,7 @@ import { siteConfig } from "@/config/site"
 import { buttonVariants } from "@/components/ui/button"
 import { ConfirmEventButton } from "@/components/confirm-event-button"
 import { Button } from "@/components/ui/button"
-import Imagen1 from "@/components/imagen1"
+import Image from "next/image";
 import { Input } from "@/components/ui/input"
 import {
   Card,
@@ -15,25 +15,22 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import HouseForm from "@/components/form/HouseForm"
+import ames from "../assets/ames.png";
+// Imagenes
+import family from "../assets/family.png";
+
+// Componentes
+import HeadInfo from "@/components/elements/head-info"
 
 export default async function IndexPage() {
 
   return (
     <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
-      <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
-        <div className="flex">
-          {/* Mitad Izquierda: Texto */}
-          <div className="w-1/2 p-6">
-            <h2 className="text-5xl font-bold">Título de la sección</h2>
-            <p className="mt-4">Aquí puedes agregar tu contenido de texto.</p>
-          </div>
-
-          {/* Mitad Derecha: Imagen */}
-          <div className="w-1/2">
-            <Imagen1 />
-          </div>
-        </div>
-      </section>
+      <HeadInfo
+        title="About Us"
+        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula, purus ut"
+        image={family}
+      />
       <section className="grid grid-cols-2 grid-rows-2 gap-4">
         {/* Recuadro 1 */}
         <div className="p-4 rounded-lg">
@@ -79,7 +76,10 @@ export default async function IndexPage() {
         </p>
         {/* Imagen */}
         <div className="mt-8 text-right">
-          <Imagen1 />
+          <Image 
+            src={ames} 
+            alt="Turquoise House"
+            className="w-3/4"/>;
         </div>
       </section>
     </section>
