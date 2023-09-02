@@ -16,29 +16,32 @@ import {
 import HouseForm from "@/components/form/HouseForm"
 
 // Imagenes
+import house from "../assets/house-example.png";
+import stats from "../assets/stats.avif";
 import ames from "../assets/ames.png";
-import family from "../assets/family.png";
 
 // Componentes
 import HeadInfo from "@/components/elements/head-info"
-import ImgSection from "@/components/elements/img-section"
 import FourBoxes from "./four-boxes"
+import ImgBox from "@/components/elements/img-box"
 
 export default async function IndexPage() {
 
   return (
     <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
       <HeadInfo
-        title="About Us"
+        title="Home"
         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula, purus ut"
-        image={family}
+        image={house}
       />
       <FourBoxes />
-      <ImgSection
+      <ImgBox
+        image={stats}
         title="Title"
         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula, purus ut"
-        image={ames}
+        buttonText="¡Prueba una demo!"
       />
+      <FourBoxes />
     </section>
   )
 }

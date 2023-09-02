@@ -11,7 +11,7 @@ const ImgSection = (props:any) => {
         <div className="mt-8 text-right">
           <Image 
             src={props.image} 
-            alt="Turquoise House"
+            alt="ImgSection"
             className="w-3/4"/>
         </div>
       </section>
