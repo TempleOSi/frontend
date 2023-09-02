@@ -1,0 +1,14 @@
+const SmtextTitleText = (props:any) => {
+    return (
+        <section className="w-5/6 mx-auto p-8">
+        <h2 className="text-sm font-bold text-left text-gray-600">{props.legend}</h2>
+        <div className="h-1 w-20 bg-red-500 mb-4 mt-2"></div>
+        <h1 className="text-4xl font-bold mb-4 mt-6">{props.title}</h1>
+        <p className="text-gray-600 mt-8">
+          {props.text}
+        </p>
+      </section>
+    )
+}
+
+export default SmtextTitleText;

@@ -5,12 +5,12 @@ const HeadInfo = (props: any) => {
     return (
         <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
         <div className="flex">
-          {/* Mitad Izquierda: Texto */}
+          {/* Mitad Izquierda*/}
           <div className="w-1/2 p-6">
             <h2 className="text-5xl font-bold">{props.title}</h2>
             <p className="mt-4">{props.text}</p>
           </div>
-          {/* Mitad Derecha: Imagen */}
+          {/* Mitad Derecha*/}
           <div className="w-1/3">
             <Image 
             src={props.image} 
