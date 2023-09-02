@@ -47,7 +47,7 @@ const HouseForm = () => {
 
     const defaultValues = {
         street: '',
-        neigh: '', // Proporciona un valor inicial para el campo "username"
+        neigh: '', // Proporciona un valor inicial para los campos del form.
     };
 
     const form = useForm<z.infer<typeof FormSchema>>({
@@ -76,15 +76,15 @@ const HouseForm = () => {
                     {testResponse ? testResponse : "Loading..."}
                 </CardDescription>
             </CardHeader>
-
+            <CardContent>
             <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="w-2/3 space-y-6">
+                <form onSubmit={form.handleSubmit(onSubmit)} className="w-full">
                     <FormField
                         control={form.control}
                         name="street"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Street</FormLabel>
+                                <FormLabel className="mt-6">Street</FormLabel>
                                 <FormControl>
                                     <Input placeholder="Example: Glenn Dr. ... " {...field} />
                                 </FormControl>
@@ -98,22 +98,37 @@ const HouseForm = () => {
                         control={form.control}
                         name="neigh"
                         render={({ field }) => (
-                            <FormItem>
-                                <FormLabel>Neighborhood</FormLabel>
+                            <FormItem className="mt-6">
+                                <FormLabel className="mt-10" >Neighborhood</FormLabel>
                                 <FormControl>
-                                    <Input placeholder="Example: Glenn Dr. ... " {...field} />
+                                    <Input className="mt-6" placeholder="Example: Glenn Dr. ... " {...field} />
                                 </FormControl>
                                 <FormDescription>
-                                    Use only one sentence.
                                 </FormDescription>
                                 <FormMessage />
                             </FormItem>
                         )}
                     />
-                    <Button className="w-full" type="submit">Submit</Button>
+                    <CardFooter>
+                        <Button className="w-full mt-6" type="submit">Submit</Button>
+                    </CardFooter>
+
                 </form>
             </Form>
+        
+            </CardContent>
+
+
+
+
+
+            
         </Card>
+
+
+
+
+
     )
 }
 
