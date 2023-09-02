@@ -1,15 +1,20 @@
 import React from 'react'
 
+// Componentes
+import HeadInfo from '@/components/elements/head-info'
+
+// Imagenes
+import family from "../../assets/family.png";
+
 const page = () => {
   return (
     <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
-      <div className="flex flex-col items-center gap-2">
-        <p className="text-2xl font-bold"> About Us </p>
-
-      </div>
+      <HeadInfo
+        title="About Us"
+        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula, purus ut"
+        image={family}
+      />
     </section>
-
-
   )
 }
 
