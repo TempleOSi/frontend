@@ -1,5 +1,3 @@
-import React from 'react'
-
 // Componentes
 import HeadInfo from '@/components/elements/head-info'
 import SmtextTitleText from '@/components/elements/smtext-title-text';
