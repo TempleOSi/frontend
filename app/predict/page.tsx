@@ -1,25 +1,8 @@
 'use client';
 
-import Link from "next/link"
-
-import { siteConfig } from "@/config/site"
-import { buttonVariants } from "@/components/ui/button"
-import { ConfirmEventButton } from "@/components/confirm-event-button"
-import { Button } from "@/components/ui/button"
-import { Toaster } from "@/components/ui/toaster"
-import Imagen1 from "@/components/imagen1"
-import { Input } from "@/components/ui/input"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
 import HouseForm from "@/components/form/HouseForm"
 
-export default async function IndexPage() {
+export default async function PredictPage() {
 
   return (
     <>
@@ -28,7 +11,6 @@ export default async function IndexPage() {
           <p className="text-2xl font-bold"> Predict </p>
           <HouseForm />
         </div>
-        <Toaster />
       </section>
     </>
   )
