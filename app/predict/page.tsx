@@ -1,6 +1,7 @@
 'use client';
 
 import HouseForm from "@/components/form/HouseForm"
+import { Toaster } from "@/components/ui/toaster"
 
 export default async function PredictPage() {
 
@@ -11,6 +12,7 @@ export default async function PredictPage() {
           <p className="text-2xl font-bold"> Predict </p>
           <HouseForm />
         </div>
+        <Toaster />
       </section>
     </>
   )
