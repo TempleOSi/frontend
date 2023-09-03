@@ -29,15 +29,15 @@ export default async function IndexPage() {
   return (
     <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
       <HeadInfo
-        title="Home"
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula, purus ut"
+        title="Convierte Datos en Decisiones: Precios Precisos para Bienes Raíces"
+        text="En el mundo de los bienes raíces, saber cuánto vale tu propiedad es esencial. Ya sea que estés buscando vender, comprar o simplemente quieras entender mejor tu inversión, nuestra plataforma de estimación de precios para inmuebles está aquí para ti. Nuestra herramienta de análisis de datos utiliza tecnología avanzada y una vasta base de datos de propiedades comparables para proporcionarte una valoración precisa y actualizada de tu inmueble"
         image={house}
       />
       <FourBoxes />
       <ImgBox
         image={stats}
-        title="Title"
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula, purus ut"
+        title=""
+        text="No importa si eres un propietario, un comprador o un agente inmobiliario, nuestra plataforma es tu aliada en el mundo de los bienes raíces. ¡Obtén tu estimación de precios ahora y comienza a tomar decisiones inteligentes con respecto a tu patrimonio!"
         buttonText="¡Prueba una demo!"
       />
       <Footer />
