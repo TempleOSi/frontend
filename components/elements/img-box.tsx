@@ -28,7 +28,7 @@ const ImgBox = (props: any) => {
                         <p>{props.text}</p>
                     </CardContent>
                     <CardFooter>
-                        <Button asChild>
+                        <Button asChild className="mx-auto">
                             <Link href="/predict">{props.buttonText}</Link>
                         </Button>
                     </CardFooter>
