@@ -36,7 +36,7 @@ export default async function IndexPage() {
       <FourBoxes />
       <ImgBox
         image={stats}
-        title=""
+        title="Calcula el precio de tu inmueble"
         text="No importa si eres un propietario, un comprador o un agente inmobiliario, nuestra plataforma es tu aliada en el mundo de los bienes raíces. ¡Obtén tu estimación de precios ahora y comienza a tomar decisiones inteligentes con respecto a tu patrimonio!"
         buttonText="¡Prueba una demo!"
       />

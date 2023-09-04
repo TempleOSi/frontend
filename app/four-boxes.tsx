@@ -1,3 +1,4 @@
+import analicon from "../assets/analicon.png";
 const FourBoxes = () => {
     return(
         <section className="grid grid-cols-2 grid-rows-2 gap-4 m-10 bg-border">
@@ -10,7 +11,7 @@ const FourBoxes = () => {
         </div>
         <div className="p-4 rounded-lg">
           <div className="flex items-center mb-2">
-            <div className="w-8 h-8 bg-green-500 rounded-full"></div> {/* Reemplaza con tu icono */}
+            <div className="w-8 h-8 bg-green-500 rounded-full">{}</div>
             <h3 className="ml-2 text-lg font-bold">Obtener una Estimación Instantánea</h3>
           </div>
           <p>Descubre el valor estimado de tu propiedad en cuestión de segundos</p>
