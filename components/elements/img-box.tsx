@@ -13,7 +13,7 @@ import {
 
 const ImgBox = (props: any) => {
     return (
-        <section className="w-5/6 mx-auto p-8">
+        <section className="w-5/6 mx-auto p-8 mb-10">
             <div className="relative mb-16">
                 <Image
                     src={props.image}
@@ -28,7 +28,7 @@ const ImgBox = (props: any) => {
                         <p>{props.text}</p>
                     </CardContent>
                     <CardFooter>
-                        <Button asChild>
+                        <Button asChild className="mx-auto">
                             <Link href="/predict">{props.buttonText}</Link>
                         </Button>
                     </CardFooter>

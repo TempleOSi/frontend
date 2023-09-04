@@ -1,7 +1,7 @@
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
-  name: "NeighborhoodHub",
+  name: "NeighborHub",
   description:
     "¡Un lugar donde predecir la casa de tus sueños a un precio de ensueño!.",
   mainNav: [
@@ -10,13 +10,13 @@ export const siteConfig = {
       href: "/",
     },
     {
-      title: "Predict",
-      href: "/predict",
-    },
-    {
       title: "About Us",
       href: "/about-us",
       
+    },
+    {
+      title: "Predict",
+      href: "/predict",
     },
     {
       title: "Sign-In",
@@ -24,8 +24,8 @@ export const siteConfig = {
     },
   ],
   links: {
-    twitter: "https://twitter.com/shadcn",
-    github: "https://github.com/shadcn/ui",
+    twitter: "https://twitter.com/solisolsoli",
+    github: "https://github.com/TempleOSi",
     docs: "https://ui.shadcn.com",
   },
 }

@@ -1,36 +1,38 @@
+import SimpleCard from "@/components/elements/simple-card";
+
 const FourBoxes = () => {
-    return(
-        <section className="grid grid-cols-2 grid-rows-2 gap-4 m-10">
-        <div className="p-4 rounded-lg">
-          <div className="flex items-center mb-2">
-            <div className="w-8 h-8 bg-blue-500 rounded-full"></div> {/* Reemplaza con tu icono */}
-            <h3 className="ml-2 text-lg font-bold">Título 1</h3>
-          </div>
-          <p>Texto descriptivo para el Recuadro 1.</p>
+  return (
+    <section className="mr-8 ml-8">
+      <div className="flex">
+        <div className="w-1/2 p-4">
+          <SimpleCard
+          title="Análisis detallado"
+          content="Explora detalles específicos de tu inmueble, como su ubicación, tamaño, características y más, para comprender mejor cómo se calcula su valor"
+          />
         </div>
-        <div className="p-4 rounded-lg">
-          <div className="flex items-center mb-2">
-            <div className="w-8 h-8 bg-green-500 rounded-full"></div> {/* Reemplaza con tu icono */}
-            <h3 className="ml-2 text-lg font-bold">Título 2</h3>
-          </div>
-          <p>Texto descriptivo para el Recuadro 2.</p>
+        <div className="w-1/2 p-4">
+          <SimpleCard
+          title="Obtener una Estimación Instantánea"
+          content="Descubre el valor estimado de tu propiedad en cuestión de segundos"
+        />
         </div>
-        <div className="p-4 rounded-lg">
-          <div className="flex items-center mb-2">
-            <div className="w-8 h-8 bg-red-500 rounded-full"></div> {/* Reemplaza con tu icono */}
-            <h3 className="ml-2 text-lg font-bold">Título 3</h3>
-          </div>
-          <p>Texto descriptivo para el Recuadro 3.</p>
+      </div>
+      <div className="flex">
+        <div className="w-1/2 p-4">
+        <SimpleCard
+          title="Datos en Tiempo Real"
+          content="Nuestra plataforma se actualiza constantemente con datos del mercado, lo que significa que siempre tendrás información actualizada"
+        />
         </div>
-        <div className="p-4 rounded-lg">
-          <div className="flex items-center mb-2">
-            <div className="w-8 h-8 bg-yellow-500 rounded-full"></div> {/* Reemplaza con tu icono */}
-            <h3 className="ml-2 text-lg font-bold">Título 4</h3>
-          </div>
-          <p>Texto descriptivo para el Recuadro 4.</p>
+        <div className="w-1/2 p-4">
+        <SimpleCard
+          title="Comparaciones Relevantes"
+          content="Compara tu propiedad con otras similares en tu área, para una perspectiva más completa y precisa"
+        />
         </div>
-      </section>
-    )
+      </div>
+    </section>
+  )
 }
 
 export default FourBoxes;
