@@ -1,10 +1,10 @@
 import axios from "axios";
 
-const ML_SERVICES_URL = "http://127.0.0.1:5000";
+import { API_BASE_URL } from "../config";
 
 export const getTest = async () => {
     try {
-        const res = await axios.get(`${ML_SERVICES_URL}/test`);
+        const res = await axios.get(`${API_BASE_URL}/test`);
         return res.data;
     } catch (err) {
         console.error('Error fetching data: ', err);
@@ -14,7 +14,7 @@ export const getTest = async () => {
 
 export const postGeneral = async (generalInfo: any) => {
     try {
-        const res = await axios.post(`${ML_SERVICES_URL}/addGeneral`, 
+        const res = await axios.post(`${API_BASE_URL}/addGeneral`, 
         { generalInfo });
         return res.data;
     } catch (err) {

@@ -1,9 +1,9 @@
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
-  name: "TempleOS",
+  name: "NeighborHub",
   description:
-    "Beautifully designed components built with Radix UI and Tailwind CSS.",
+    "¡Un lugar donde predecir la casa de tus sueños a un precio de ensueño!.",
   mainNav: [
     {
       title: "Home",
@@ -21,7 +21,6 @@ export const siteConfig = {
     {
       title: "Sign-In",
       href: "/sign-in",
-      
     },
   ],
   links: {
