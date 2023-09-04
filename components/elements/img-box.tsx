@@ -13,7 +13,7 @@ import {
 
 const ImgBox = (props: any) => {
     return (
-        <section className="w-5/6 mx-auto p-8">
+        <section className="w-5/6 mx-auto p-8 mb-10">
             <div className="relative mb-16">
                 <Image
                     src={props.image}

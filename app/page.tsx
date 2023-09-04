@@ -15,8 +15,8 @@ import {
 } from "@/components/ui/card"
 
 // Imagenes
-import house from "../assets/house-example.png";
-import stats from "../assets/stats.avif";
+import littlehose from "../assets/littlehouse.png";
+import machilelearn from "../assets/machine-learn.jpg";
 
 // Componentes
 import HeadInfo from "@/components/elements/head-info"
@@ -31,12 +31,12 @@ export default async function IndexPage() {
       <HeadInfo
         title="Convierte Datos en Decisiones: Precios Precisos para Bienes Raíces"
         text="En el mundo de los bienes raíces, saber cuánto vale tu propiedad es esencial. Ya sea que estés buscando vender, comprar o simplemente quieras entender mejor tu inversión, nuestra plataforma de estimación de precios para inmuebles está aquí para ti. Nuestra herramienta de análisis de datos utiliza tecnología avanzada y una vasta base de datos de propiedades comparables para proporcionarte una valoración precisa y actualizada de tu inmueble"
-        image={house}
+        image={littlehose}
       />
       <FourBoxes />
       <ImgBox
-        image={stats}
-        title=""
+        image={machilelearn}
+        title="¡Hacemos la magia por ti!"
         text="No importa si eres un propietario, un comprador o un agente inmobiliario, nuestra plataforma es tu aliada en el mundo de los bienes raíces. ¡Obtén tu estimación de precios ahora y comienza a tomar decisiones inteligentes con respecto a tu patrimonio!"
         buttonText="¡Prueba una demo!"
       />
