@@ -1,7 +1,7 @@
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
-  name: "NeighborhoodHub",
+  name: "NeighborHub",
   description:
     "¡Un lugar donde predecir la casa de tus sueños a un precio de ensueño!.",
   mainNav: [
