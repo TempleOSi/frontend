@@ -21,12 +21,12 @@ export const siteConfig = {
       
     },
     {
-      title: "Predict",
-      href: "/predict",
-    },
-    {
       title: "Get Started!",
       href: "/sign-up",
+    },
+    {
+      title: "Predict",
+      href: "/predict",
     },
   ],
   
