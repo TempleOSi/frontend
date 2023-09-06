@@ -22,7 +22,7 @@ const ImgBox = (props: any) => {
                 />
                 <Card className="absolute inset-x-0 bottom-0 mx-auto w-3/4 p-4 transform translate-y-1/2 -mb-1/2">
                     <CardHeader>
-                        <CardTitle>{props.title}</CardTitle>
+                        <CardTitle className="text-center">{props.title}</CardTitle>
                     </CardHeader>
                     <CardContent>
                         <p>{props.text}</p>
