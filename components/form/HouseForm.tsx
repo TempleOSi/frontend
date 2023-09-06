@@ -114,7 +114,7 @@ const HouseForm = () => {
                 <CardHeader>
                     <CardTitle className="text-center">Tell us about your dream home</CardTitle>
                     <CardDescription className="text-center">
-                        {testResponse ? testResponse : "Loading..."}
+                        {/* {testResponse ? testResponse : "Loading..."} */}
                     </CardDescription>
                 </CardHeader>
                 <CardContent>
