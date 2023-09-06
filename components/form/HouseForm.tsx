@@ -14,6 +14,13 @@ import {
     FormLabel,
     FormMessage,
 } from "@/components/ui/form"
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from "@/components/ui/select"
 import { Input } from "@/components/ui/input"
 import { useToast } from "@/components/ui/use-toast"
 import { ToastAction } from "@/components/ui/toast"
@@ -25,6 +32,10 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
+import { cn } from "@/lib/utils"
+import { Slider } from "@/components/ui/slider"
+
+type SliderProps = React.ComponentProps<typeof Slider>
 
 const FormSchema = z.object({
     street: z.string().min(1, {
@@ -33,9 +44,15 @@ const FormSchema = z.object({
     neigh: z.string().min(1, {
         message: "This field is required.",
     }),
+    postal: z.string().min(1, {
+        message: "This field is required.",
+    }),
+    price: z.number().int()
 })
 
 import { getTest } from "@/services/ml-services"
+
+
 
 const HouseForm = () => {
     const { toast } = useToast()
@@ -49,7 +66,9 @@ const HouseForm = () => {
 
     const defaultValues = {
         street: '',
-        neigh: '',
+        neigh: '',  
+        postal: '',
+        price: 50,
     };
 
     const form = useForm<z.infer<typeof FormSchema>>({
@@ -121,11 +140,58 @@ const HouseForm = () => {
                                 name="neigh"
                                 render={({ field }) => (
                                     <FormItem className="mt-6">
-                                        <FormLabel className="mt-10" >Neighborhood</FormLabel>
+                                        <FormLabel className="mt-10">Neighborhood</FormLabel>
                                         <FormControl>
                                             <Input className="mt-6" placeholder="Example: Glenn Dr. ... " {...field} />
                                         </FormControl>
                                         <FormDescription>
+                                        </FormDescription>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                            <FormField
+                                control={form.control}
+                                name="postal"
+                                render={({ field }) => (
+                                    <FormItem className='mt-6'>
+                                        <FormLabel>Postal Code</FormLabel>
+                                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                            <FormControl>
+                                                <SelectTrigger>
+                                                    <SelectValue placeholder="Enter your desired postal code." />
+                                                </SelectTrigger>
+                                            </FormControl>
+                                            <SelectContent>
+                                                <SelectItem value="03487">03487</SelectItem>
+                                                <SelectItem value="03721">03721</SelectItem>
+                                                <SelectItem value="04567">04567</SelectItem>
+                                            </SelectContent>
+                                        </Select>
+                                        <FormDescription>
+                                            Enter your desired postal code.
+                                        </FormDescription>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                            <FormField
+                                control={form.control}
+                                name="price"
+                                render={({ field }) => (
+                                    <FormItem className='mt-6'>
+                                        <FormLabel className='mb-6'>Price: ${field.value}</FormLabel>
+                                        <FormControl>
+                                            <Slider
+                                                onValueChange={(newValue) => field.onChange(newValue[0])}
+                                                defaultValue={[50]}
+                                                max={100}
+                                                step={1}
+                                                className={cn("")}
+                                            />
+                                        </FormControl>
+                                        <FormDescription>
+
                                         </FormDescription>
                                         <FormMessage />
                                     </FormItem>
