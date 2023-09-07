@@ -7,7 +7,7 @@ import Footer from '@/components/elements/footer';
 
 // Imagenes
 import family from "../../assets/family.png";
-import example from "../../assets/example.png";
+import bigd from "../../assets/bigd.jpg";
 import neighborhood from "../../assets/neighborhood.png";
 import analytics from "../../assets/analytics.jpg";
 
@@ -32,7 +32,7 @@ const page = () => {
         title="Analítica de datos"
         text="Estamos comprometidos a ser tu socio de confianza en el mundo de los bienes raíces, gracias a nuestra experiencia en analítica de datos. Te invitamos a unirte a nosotros en esta emocionante jornada hacia un mercado inmobiliario más transparente y basado en datos. Confía en nosotros para tomar decisiones más inteligentes y estratégicas en tu inversión inmobiliaria.
         ¡Descubre el poder de los datos con Neighborhub!"
-        image={neighborhood}
+        image={bigd}
       />
       <Footer />
     </section>
