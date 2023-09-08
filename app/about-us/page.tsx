@@ -8,8 +8,8 @@ import Footer from '@/components/elements/footer';
 // Imagenes
 import family from "../../assets/family.png";
 import bigd from "../../assets/bigd.jpg";
-import neighborhood from "../../assets/neighborhood.png";
-import analytics from "../../assets/analytics.jpg";
+import objetive from "../../assets/objetive.jpg";
+import dataAnalitics from "../../assets/data_ana.jpg";
 
 
 const page = () => {
@@ -26,13 +26,12 @@ const page = () => {
         text="Imaginamos un futuro en el que cualquier persona, en cualquier parte del mundo, pueda acceder a estimaciones de precios inmobiliarios precisas y confiables con facilidad. Vemos un mercado inmobiliario más eficiente y equitativo, en el que las personas tomen decisiones basadas en información sólida en lugar de suposiciones inciertas."
       />
       <ImgThreetext
-        image={analytics}
+        image={objetive}
       />
       <ImgSection
         title="Analítica de datos"
-        text="Estamos comprometidos a ser tu socio de confianza en el mundo de los bienes raíces, gracias a nuestra experiencia en analítica de datos. Te invitamos a unirte a nosotros en esta emocionante jornada hacia un mercado inmobiliario más transparente y basado en datos. Confía en nosotros para tomar decisiones más inteligentes y estratégicas en tu inversión inmobiliaria.
-        ¡Descubre el poder de los datos con Neighborhub!"
-        image={bigd}
+        text="Estamos comprometidos a ser tu socio de confianza en el mundo de los bienes raíces, gracias a nuestra experiencia en analítica de datos. Te invitamos a unirte a nosotros en esta emocionante jornada hacia un mercado inmobiliario más transparente y basado en datos. Confía en nosotros para tomar decisiones más inteligentes y estratégicas en tu inversión inmobiliaria. ¡Descubre el poder de los datos con Neighborhub!"
+        image={dataAnalitics}
       />
       <Footer />
     </section>
