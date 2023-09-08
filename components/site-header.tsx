@@ -23,7 +23,7 @@ export function SiteHeader() {
                 "opacity-80"
               )}
             >
-              {"Sign-In"}
+              {"Iniciar sesión"}
             </Link>
             <Link
               href={siteConfig.links.github}
