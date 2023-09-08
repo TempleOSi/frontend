@@ -6,26 +6,26 @@ export const siteConfig = {
     "¡Un lugar donde predecir la casa de tus sueños a un precio de ensueño!.",
   secNav: [
       {
-        title: "Sign-In",
+        title: "Inicia sesión",
         href: "/sign-in",
       },
     ],
   mainNav: [
     {
-      title: "Home",
+      title: "Inicio",
       href: "/",
     },
     {
-      title: "About Us",
+      title: "Sobre nosotros",
       href: "/about-us",
       
     },
     {
-      title: "Get Started!",
+      title: "¡Haz una prueba!",
       href: "/sign-up",
     },
     {
-      title: "Predict",
+      title: "Predice tu casa",
       href: "/predict",
     },
   ],

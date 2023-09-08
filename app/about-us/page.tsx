@@ -16,7 +16,7 @@ const page = () => {
   return (
     <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
       <HeadInfo
-        title="About Us"
+        title="Sobre nosotros"
         text="Desde nuestros inicios, hemos estado en una misión implacable para revolucionar la forma en que las personas entienden y aprovechan los datos en el sector inmobiliario. Lo que comenzó como una visión audaz se ha convertido en una plataforma líder que utiliza el poder de la analítica avanzada para proporcionar estimaciones de precios inmobiliarios de primera calidad. En Neighborhub, creemos que los datos son la brújula que guía el mundo de los bienes raíces. Fundada por un equipo de apasionados por la analítica de datos, nuestra empresa se ha convertido en un faro de precisión en el mercado inmobiliario."
         image={family}
       />
