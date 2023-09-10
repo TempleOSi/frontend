@@ -47,7 +47,8 @@ const FormSchema = z.object({
     postal: z.string().min(1, {
         message: "This field is required.",
     }),
-    price: z.number().int()
+    price: z.number().int(),
+    lotarea: z.number().int()
 })
 
 import { getTest } from "@/services/ml-services"
@@ -66,9 +67,10 @@ const HouseForm = () => {
 
     const defaultValues = {
         street: '',
-        neigh: '',  
+        neigh: '',
         postal: '',
         price: 50,
+        lotarea: 10000
     };
 
     const form = useForm<z.infer<typeof FormSchema>>({
@@ -118,6 +120,7 @@ const HouseForm = () => {
                     </CardDescription>
                 </CardHeader>
                 <CardContent>
+
                     <Form {...form}>
                         <form onSubmit={form.handleSubmit(onSubmit)} className="w-full">
                             <FormField
@@ -130,6 +133,31 @@ const HouseForm = () => {
                                             <Input placeholder="Example: Glenn Dr. ... " {...field} />
                                         </FormControl>
                                         <FormDescription>
+                                        </FormDescription>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                            <FormField
+                                control={form.control}
+                                name="lotarea"
+                                render={({ field }) => (
+                                    <FormItem className='mt-6'>
+                                        <FormLabel className='mb-6'>
+                                            ¿Cuál es el tamaño de tu casa ideal?<br />
+                                            {field.value} ft²
+                                        </FormLabel>
+                                        <FormControl>
+                                            <Slider
+                                                onValueChange={(newValue) => field.onChange(newValue[0])}
+                                                defaultValue={[10000]}
+                                                max={20000}
+                                                step={1}
+                                                className={cn("")}
+                                            />
+                                        </FormControl>
+                                        <FormDescription>
+
                                         </FormDescription>
                                         <FormMessage />
                                     </FormItem>
