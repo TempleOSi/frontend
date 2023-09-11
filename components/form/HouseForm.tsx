@@ -125,7 +125,7 @@ const HouseForm = () => {
         <Fragment>
             <Card className="w-[500px]">
                 <CardHeader>
-                    <CardTitle className="text-center">Tell us about your dream home</CardTitle>
+                    <CardTitle className="text-center">¡Cuéntanos todos los detalles!</CardTitle>
                     <CardDescription className="text-center">
                         {/* {testResponse ? testResponse : "Loading..."} */}
                     </CardDescription>
