@@ -76,12 +76,12 @@ const HouseForm = () => {
         // neigh: '',
         // postal: '',
         price: 50,
-        LotArea: 10000,
-        GrLivArea: 10000,
+        LotArea: 10516,
+        GrLivArea: 1515,
         FullBath: 1,
         HalfBath: 1,
         KitchenAbvGr: 1,
-        GarageArea: 10000
+        GarageArea: 472
     };
 
     const form = useForm<z.infer<typeof FormSchema>>({
@@ -161,8 +161,9 @@ const HouseForm = () => {
                                         <FormControl>
                                             <Slider
                                                 onValueChange={(newValue) => field.onChange(newValue[0])}
-                                                defaultValue={[10000]}
+                                                defaultValue={[10516]}
                                                 max={20000}
+                                                min = {2000}
                                                 step={1}
                                                 className={cn("")}
                                             />
@@ -186,8 +187,9 @@ const HouseForm = () => {
                                         <FormControl>
                                             <Slider
                                                 onValueChange={(newValue) => field.onChange(newValue[0])}
-                                                defaultValue={[10000]}
-                                                max={20000}
+                                                defaultValue={[1515]}
+                                                max={4000}
+                                                min={1000}
                                                 step={1}
                                                 className={cn("")}
                                             />
@@ -212,9 +214,9 @@ const HouseForm = () => {
                                                 </SelectTrigger>
                                             </FormControl>
                                             <SelectContent>
-                                                <SelectItem value={1}>{1}</SelectItem>
-                                                <SelectItem value={2}>{2}</SelectItem>
-                                                <SelectItem value={3}>{3}</SelectItem>
+                                                <SelectItem value="1">1</SelectItem>
+                                                <SelectItem value="2">2</SelectItem>
+                                                <SelectItem value="3">3</SelectItem>
                                             </SelectContent>
                                         </Select>
                                         <FormDescription>
@@ -237,9 +239,9 @@ const HouseForm = () => {
                                                 </SelectTrigger>
                                             </FormControl>
                                             <SelectContent>
-                                                <SelectItem value={1}>{1}</SelectItem>
-                                                <SelectItem value={2}>{2}</SelectItem>
-                                                <SelectItem value={3}>{3}</SelectItem>
+                                                <SelectItem value="1">1</SelectItem>
+                                                <SelectItem value="2">2</SelectItem>
+                                                <SelectItem value="3">3</SelectItem>
                                             </SelectContent>
                                         </Select>
                                         <FormDescription>
@@ -262,9 +264,9 @@ const HouseForm = () => {
                                                 </SelectTrigger>
                                             </FormControl>
                                             <SelectContent>
-                                                <SelectItem value={1}>{1}</SelectItem>
-                                                <SelectItem value={2}>{2}</SelectItem>
-                                                <SelectItem value={3}>{3}</SelectItem>
+                                                <SelectItem value="1">1</SelectItem>
+                                                <SelectItem value="2">2</SelectItem>
+                                                <SelectItem value="3">3</SelectItem>
                                             </SelectContent>
                                         </Select>
                                         <FormDescription>
@@ -286,8 +288,9 @@ const HouseForm = () => {
                                         <FormControl>
                                             <Slider
                                                 onValueChange={(newValue) => field.onChange(newValue[0])}
-                                                defaultValue={[10000]}
-                                                max={20000}
+                                                defaultValue={[472]}
+                                                max={1000}
+                                                min={260}
                                                 step={1}
                                                 className={cn("")}
                                             />
