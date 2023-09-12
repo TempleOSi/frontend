@@ -17,17 +17,20 @@ const AlertPrice = (props: any) => {
     return (
         <AlertDialog open={props.open} onOpenChange={props.setOpen}>
             <AlertDialogContent>
-                <AlertDialogHeader>
-                    <AlertDialogTitle>El precio estimado segun tus parametros es:</AlertDialogTitle>
-                    <AlertDialogDescription>
-                        {props.price}
-                    </AlertDialogDescription>
+                <AlertDialogHeader className="p-4">
+                    <AlertDialogTitle className="text-center">¡Su solicitud ha sido un exito!</AlertDialogTitle>
                 </AlertDialogHeader>
+                <div className="p-4 text-center"> 
+                    <AlertDialogDescription className="text-2xl mt-2 mb-8"> 
+                    El precio estimado según tus parámetros es{props.price} dólares!
+                    </AlertDialogDescription>
+                </div>
                 <AlertDialogFooter>
                     <AlertDialogAction>Ok!</AlertDialogAction>
                 </AlertDialogFooter>
             </AlertDialogContent>
         </AlertDialog>
+
     )
 }
 
