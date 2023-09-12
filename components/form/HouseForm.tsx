@@ -338,8 +338,7 @@ const HouseForm = () => {
                     </Form>
                 </CardContent>
             </Card>
-            Operador para que se muestre el componente de alerta cuando se haya hecho la petición
-            {load ? <AlertPrice price={price} /> : null}
+            <AlertPrice open={load} setOpen={setLoad} price={price} />
         </Fragment>
     )
 }

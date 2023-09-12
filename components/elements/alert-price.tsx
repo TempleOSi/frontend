@@ -15,7 +15,7 @@ import { Button } from "@/components/ui/button"
 
 const AlertPrice = (props: any) => {
     return (
-        <AlertDialog>
+        <AlertDialog open={props.open} onOpenChange={props.setOpen}>
             <AlertDialogContent>
                 <AlertDialogHeader>
                     <AlertDialogTitle>El precio estimado segun tus parametros es:</AlertDialogTitle>
