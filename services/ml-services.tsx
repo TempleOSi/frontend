@@ -23,4 +23,14 @@ export const postGeneral = async (generalInfo: any) => {
         throw err;
     }
 }
-    
+
+export const getPrediction = async (houseData: any) => {
+    console.log(houseData);
+    try {
+        const res = await axios.post(`${API_BASE_URL}/ml_model`, houseData);
+        return res.data;
+    } catch (err) {
+        console.error('Error fetching data: ', err);
+        throw err;
+    }
+}

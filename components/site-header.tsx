@@ -15,7 +15,7 @@ export function SiteHeader() {
         <MainNav items={siteConfig.mainNav} />
         <div className="flex items-center justify-end space-x-4 mt-4">
           <nav className="flex items-center space-x-1">
-            <Link
+            {/* <Link
               key={1}
               href={"/sign-in"}
               className={cn(
@@ -24,7 +24,7 @@ export function SiteHeader() {
               )}
             >
               {"Iniciar sesión"}
-            </Link>
+            </Link> */}
             <Link
               href={siteConfig.links.github}
               target="_blank"

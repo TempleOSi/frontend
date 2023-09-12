@@ -46,11 +46,9 @@ const FormSchema = z.object({
     LotConfig: z.string(),
     Neighborhood: z.string(),
     HouseStyle: z.string(),
-    YearBuilt: z.string().length(4, {
-        message: "Por favor usa un formato de 4 dígitos."
-    }),
+    YearBuilt: z.number().int(),
     Exterior1st: z.string(),
-    BsmtExposure: z.string(),
+    BsmtExposure: z.any(),
     HeatingQC: z.string(),
     FullBath: z.any(),
     GarageType: z.string(), //Garage location.
@@ -61,7 +59,7 @@ const FormSchema = z.object({
 
 import AlertPrice from '../elements/alert-price';
 import { getTest } from "@/services/ml-services"
-
+import { getPrediction } from '@/services/ml-services';
 
 
 const HouseForm = () => {
@@ -85,9 +83,9 @@ const HouseForm = () => {
         LotConfig: "Inside",
         Neighborhood: "Blmngtn",
         HouseStyle: "1Story",
-        YearBuilt: "1984",
+        YearBuilt: 1984,
         Exterior1st: "AsbShng",
-        BsmtExposure: "Gd",
+        BsmtExposure: "0",
         HeatingQC: "Ex",
         FullBath: 1,
         GarageType: "2Types", //Garage location.
@@ -102,19 +100,18 @@ const HouseForm = () => {
     })
 
     async function onSubmit(data: z.infer<typeof FormSchema>) {
-        console.log('Data sended:', data)
         try {
-            const response = await getTest();
+            const response = await getPrediction(data)
             if (response) {
-                toast({
-                    title: "You submitted the following values:",
-                    description: (
-                        <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-                            <code className="text-white">{JSON.stringify(data, null, 2)}</code>
-                        </pre>
-                    ),
-                })
-                setPrice(response)
+                // toast({
+                //     title: "You submitted the following values:",
+                //     description: (
+                //         <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
+                //             <code className="text-white">{JSON.stringify(data, null, 2)}</code>
+                //         </pre>
+                //     ),
+                // })
+                setPrice(response.resultado)
                 setLoad(true)
             } else {
                 toast({
@@ -162,12 +159,12 @@ const HouseForm = () => {
                                             </FormControl>
                                             <SelectContent>
                                                 <SelectItem value="A">Agricultura</SelectItem>
-                                                <SelectItem value="C">Comercial</SelectItem>
+                                                <SelectItem value="B">Comercial</SelectItem>
                                                 <SelectItem value="FV">Zona Residencial de Aldea Flotante</SelectItem>
-                                                <SelectItem value="I">Industrial</SelectItem>
+                                                <SelectItem value="C">Industrial</SelectItem>
                                                 <SelectItem value="RH">Densidad Alta Residencial</SelectItem>
                                                 <SelectItem value="RL">Densidad Baja Residencial</SelectItem>
-                                                <SelectItem value="RP">Densidad Baja Residencial (Parque)</SelectItem>
+                                                <SelectItem value="D">Densidad Baja Residencial (Parque)</SelectItem>
                                                 <SelectItem value="RM">Densidad Media Residencial</SelectItem>
                                             </SelectContent>
                                         </Select>
@@ -429,11 +426,11 @@ const HouseForm = () => {
                                                 </SelectTrigger>
                                             </FormControl>
                                             <SelectContent>
-                                                <SelectItem value="Gd">Buena Exposición</SelectItem>
-                                                <SelectItem value="Av">Exposición Promedio (los niveles divididos o entradas típicamente tienen puntajes promedio o superiores)</SelectItem>
-                                                <SelectItem value="Mn">Exposición Mínima</SelectItem>
-                                                <SelectItem value="No">Sin Exposición</SelectItem>
-                                                <SelectItem value="NA">Sin Sótano</SelectItem>
+                                                <SelectItem value="0">Buena Exposición</SelectItem>
+                                                <SelectItem value="1">Exposición Promedio (los niveles divididos o entradas típicamente tienen puntajes promedio o superiores)</SelectItem>
+                                                <SelectItem value="2">Exposición Mínima</SelectItem>
+                                                <SelectItem value="3">Sin Exposición</SelectItem>
+                                                <SelectItem value="4">Sin Sótano</SelectItem>
                                             </SelectContent>
                                         </Select>
                                         <FormDescription>
@@ -470,31 +467,6 @@ const HouseForm = () => {
                                     </FormItem>
                                 )}
                             />
-                            {/* <FormField
-                                control={form.control}
-                                name="FullBath"
-                                render={({ field }) => (
-                                    <FormItem className='mt-6'>
-                                        <FormLabel>¿Cuántos baños completos tiene la vivienda? (FullBath)</FormLabel>
-                                        <Select onValueChange={field.onChange} defaultValue={field.value}>
-                                            <FormControl>
-                                                <SelectTrigger>
-                                                    <SelectValue placeholder="Número de baños completos." />
-                                                </SelectTrigger>
-                                            </FormControl>
-                                            <SelectContent>
-                                                <SelectItem value="1">1</SelectItem>
-                                                <SelectItem value="2">2</SelectItem>
-                                                <SelectItem value="3">3</SelectItem>
-                                            </SelectContent>
-                                        </Select>
-                                        <FormDescription>
-                                            Número de baños completos.
-                                        </FormDescription>
-                                        <FormMessage />
-                                    </FormItem>
-                                )}
-                            /> */}
                             <FormField
                                 control={form.control}
                                 name="FullBath"

@@ -21,10 +21,6 @@ export const siteConfig = {
       
     },
     {
-      title: "¡Haz una prueba!",
-      href: "/sign-up",
-    },
-    {
       title: "Predice tu casa",
       href: "/predict",
     },
