@@ -57,6 +57,7 @@ const FormSchema = z.object({
 
 })
 
+import AlertPrice from '../elements/alert-price';
 import { getTest } from "@/services/ml-services"
 
 
@@ -64,6 +65,8 @@ import { getTest } from "@/services/ml-services"
 const HouseForm = () => {
     const { toast } = useToast()
     const [testResponse, setTestResponse] = useState(null); // Usar estado para almacenar la respuesta
+    const [price, setPrice] = useState(null); // Usar estado para almacenar la respuesta
+    const [load, setLoad] = useState(false);
 
     // useEffect(() => {
     //     getTest().then((res) => {
@@ -102,7 +105,8 @@ const HouseForm = () => {
                         </pre>
                     ),
                 })
-                setTestResponse(response);
+                setPrice(response)
+                setLoad(true)
             } else {
                 toast({
                     title: "Error",
@@ -334,6 +338,8 @@ const HouseForm = () => {
                     </Form>
                 </CardContent>
             </Card>
+            Operador para que se muestre el componente de alerta cuando se haya hecho la petición
+            {load ? <AlertPrice price={price} /> : null}
         </Fragment>
     )
 }
