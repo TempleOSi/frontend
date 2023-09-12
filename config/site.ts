@@ -4,25 +4,29 @@ export const siteConfig = {
   name: "NeighborHub",
   description:
     "¡Un lugar donde predecir la casa de tus sueños a un precio de ensueño!.",
+  secNav: [
+      {
+        title: "Inicia sesión",
+        href: "/sign-in",
+      },
+    ],
   mainNav: [
     {
-      title: "Home",
+      title: "Inicio",
       href: "/",
     },
     {
-      title: "About Us",
+      title: "Sobre nosotros",
       href: "/about-us",
       
     },
     {
-      title: "Predict",
+      title: "Predice tu casa",
       href: "/predict",
     },
-    {
-      title: "Sign-In",
-      href: "/sign-in",
-    },
   ],
+  
+
   links: {
     twitter: "https://twitter.com/solisolsoli",
     github: "https://github.com/TempleOSi",
