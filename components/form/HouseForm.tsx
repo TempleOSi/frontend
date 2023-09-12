@@ -38,19 +38,11 @@ import { Slider } from "@/components/ui/slider"
 type SliderProps = React.ComponentProps<typeof Slider>
 
 const FormSchema = z.object({
-    // street: z.string().min(1, {
-    //     message: "This field is required.",
-    // }),
-    // neigh: z.string().min(1, {
-    //     message: "This field is required.",
-    // }),
-    // postal: z.string().min(1, {
-    //     message: "This field is required.",
-    // }),
-    // price: z.number().int(),
+
     MSZoning: z.string(),
     LotFrontage: z.number().int(),
     LotArea: z.number().int(),
+    LotShape: z.string(),
     LotConfig: z.string(),
     Neighborhood: z.string(),
     HouseStyle: z.string(),
@@ -85,20 +77,18 @@ const HouseForm = () => {
     // }, []);
 
     const defaultValues = {
-        // street: '',
-        // neigh: '',
-        // postal: '',
-        //price: 50,
+
         MSZoning: "A",
         LotFrontage: 68,
         LotArea: 10516,
+        LotShape: "Reg",
         LotConfig: "Inside",
         Neighborhood: "Blmngtn",
         HouseStyle: "1Story",
         YearBuilt: "1984",
         Exterior1st: "AsbShng",
         BsmtExposure: "Gd",
-        HeatingQC: "ex",
+        HeatingQC: "Ex",
         FullBath: 1,
         GarageType: "2Types", //Garage location.
         WoodDeckSF: 95, //Area de terraza de madera.
@@ -157,21 +147,7 @@ const HouseForm = () => {
 
                     <Form {...form}>
                         <form onSubmit={form.handleSubmit(onSubmit)} className="w-full">
-                            {/* <FormField
-                                control={form.control}
-                                name="street"
-                                render={({ field }) => (
-                                    <FormItem>
-                                        <FormLabel className="mt-6">Street</FormLabel>
-                                        <FormControl>
-                                            <Input placeholder="Example: Glenn Dr. ... " {...field} />
-                                        </FormControl>
-                                        <FormDescription>
-                                        </FormDescription>
-                                        <FormMessage />
-                                    </FormItem>
-                                )}
-                            /> */}
+
                             <FormField
                                 control={form.control}
                                 name="MSZoning"
@@ -255,6 +231,33 @@ const HouseForm = () => {
                                     </FormItem>
                                 )}
                             />
+                            <FormField
+                                control={form.control}
+                                name="LotShape"
+                                render={({ field }) => (
+                                    <FormItem className='mt-6'>
+                                        <FormLabel>Forma General de la Propiedad (LotShape)</FormLabel>
+                                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                            <FormControl>
+                                                <SelectTrigger>
+                                                    <SelectValue placeholder="Selecciona la forma general de la propiedad." />
+                                                </SelectTrigger>
+                                            </FormControl>
+                                            <SelectContent>
+                                                <SelectItem value="Reg">Regular</SelectItem>
+                                                <SelectItem value="IR1">Ligeramente irregular</SelectItem>
+                                                <SelectItem value="IR2">Moderadamente irregular</SelectItem>
+                                                <SelectItem value="IR3">Irregular</SelectItem>
+                                            </SelectContent>
+                                        </Select>
+                                        <FormDescription>
+                                            Se refiere a la forma general de la propiedad.
+                                        </FormDescription>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+
                             <FormField
                                 control={form.control}
                                 name="LotConfig"
@@ -467,7 +470,7 @@ const HouseForm = () => {
                                     </FormItem>
                                 )}
                             />
-                            <FormField
+                            {/* <FormField
                                 control={form.control}
                                 name="FullBath"
                                 render={({ field }) => (
@@ -487,6 +490,32 @@ const HouseForm = () => {
                                         </Select>
                                         <FormDescription>
                                             Número de baños completos.
+                                        </FormDescription>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            /> */}
+                            <FormField
+                                control={form.control}
+                                name="FullBath"
+                                render={({ field }) => (
+                                    <FormItem className='mt-6'>
+                                        <FormLabel className='mb-6'>
+                                            ¿Cuántos baños completos tiene la vivienda? (FullBath)<br />
+                                            {field.value}
+                                        </FormLabel>
+                                        <FormControl>
+                                            <Slider
+                                                onValueChange={(newValue) => field.onChange(newValue[0])}
+                                                defaultValue={[1]}
+                                                max={3}
+                                                min={0}
+                                                step={1}
+                                                className={cn("")}
+                                            />
+                                        </FormControl>
+                                        <FormDescription>
+
                                         </FormDescription>
                                         <FormMessage />
                                     </FormItem>
@@ -576,31 +605,6 @@ const HouseForm = () => {
                                     </FormItem>
                                 )}
                             />
-                            {/* <FormField
-                                control={form.control}
-                                name="postal"
-                                render={({ field }) => (
-                                    <FormItem className='mt-6'>
-                                        <FormLabel>Postal Code</FormLabel>
-                                        <Select onValueChange={field.onChange} defaultValue={field.value}>
-                                            <FormControl>
-                                                <SelectTrigger>
-                                                    <SelectValue placeholder="Enter your desired postal code." />
-                                                </SelectTrigger>
-                                            </FormControl>
-                                            <SelectContent>
-                                                <SelectItem value="03487">03487</SelectItem>
-                                                <SelectItem value="03721">03721</SelectItem>
-                                                <SelectItem value="04567">04567</SelectItem>
-                                            </SelectContent>
-                                        </Select>
-                                        <FormDescription>
-                                            Enter your desired postal code.
-                                        </FormDescription>
-                                        <FormMessage />
-                                    </FormItem>
-                                )}
-                            /> */}
                             <CardFooter>
                                 <Button className="w-full mt-6" type="submit">Submit</Button>
                             </CardFooter>
