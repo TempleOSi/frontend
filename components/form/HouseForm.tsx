@@ -58,7 +58,7 @@ const FormSchema = z.object({
 })
 
 import AlertPrice from '../elements/alert-price';
-import { getTest } from "@/services/ml-services"
+import { GetServerSideProps } from 'next';
 import { getPrediction } from '@/services/ml-services';
 
 
@@ -588,5 +588,19 @@ const HouseForm = () => {
         </Fragment>
     )
 }
+
+export const getServerSideProps: GetServerSideProps = async ({ res }) => {
+    // Configura la directiva CSP para permitir solicitudes HTTP
+    if (res) {
+      res.setHeader(
+        'Content-Security-Policy',
+        'upgrade-insecure-requests'
+      );
+    }
+  
+    return {
+      props: {},
+    };
+  };
 
 export default HouseForm
