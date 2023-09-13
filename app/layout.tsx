@@ -33,7 +33,13 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <>
       <html lang="en" suppressHydrationWarning>
-        <head />
+        <head>
+          <meta
+            httpEquiv="Content-Security-Policy"
+            content="default-src 'self'; img-src * data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';"
+          />
+        </head>
+
         <body
           className={cn(
             "bg-background font-sans antialiased",

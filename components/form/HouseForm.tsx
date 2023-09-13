@@ -589,18 +589,4 @@ const HouseForm = () => {
     )
 }
 
-export const getServerSideProps: GetServerSideProps = async ({ res }) => {
-    // Configura la directiva CSP para permitir solicitudes HTTP
-    if (res) {
-      res.setHeader(
-        'Content-Security-Policy',
-        'upgrade-insecure-requests'
-      );
-    }
-  
-    return {
-      props: {},
-    };
-  };
-
 export default HouseForm
