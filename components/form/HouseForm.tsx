@@ -46,7 +46,7 @@ const FormSchema = z.object({
     LotConfig: z.string(),
     Neighborhood: z.string(),
     HouseStyle: z.string(),
-    YearBuilt: z.number().int(),
+    YearBuilt: z.number().int().gte(1872, {message: "Por favor digite una fecha válida"}).lte(2023, {message: "Por favor digite una fecha válida"}),
     Exterior1st: z.string(),
     BsmtExposure: z.any(),
     HeatingQC: z.string(),
@@ -366,7 +366,13 @@ const HouseForm = () => {
                                     <FormItem>
                                         <FormLabel className="mt-6">¿En qué año fue construida la vivienda? (YearBuilt)</FormLabel>
                                         <FormControl>
-                                            <Input placeholder="Por favor use un formato de 4 dígitos." {...field} />
+                                            <Input type="number"placeholder="Por favor use un formato de 4 dígitos."
+                                                {...field}
+                                                value={typeof field.value === 'number' ? field.value : ''}
+                                                onChange={(e) => {
+                                                    const numericValue = parseInt(e.target.value, 10);
+                                                    field.onChange(numericValue);
+                                                }} />
                                         </FormControl>
                                         <FormDescription>
                                         </FormDescription>
