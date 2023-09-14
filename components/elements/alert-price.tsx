@@ -22,7 +22,7 @@ const AlertPrice = (props: any) => {
                 </AlertDialogHeader>
                 <div className="p-4 text-center"> 
                     <AlertDialogDescription className="text-2xl mt-2 mb-8"> 
-                    El precio estimado según tus parámetros es{props.price} dólares!
+                    ¡El precio estimado según tus parámetros es {props.price} dólares!
                     </AlertDialogDescription>
                 </div>
                 <AlertDialogFooter>
